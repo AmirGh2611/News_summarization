@@ -1,7 +1,7 @@
 from http.client import HTTPSConnection
 from urllib.parse import urlencode
 from transformers import pipeline
-from token import my_token
+from MyToken import my_token
 
 
 def ui(text, search_field, categories, language, number):
