@@ -8,11 +8,13 @@ import json
 
 def ui(text, search_field, categories, number):
     connection = HTTPSConnection("api.thenewsapi.com")
+    categories_str = ",".join(categories) if categories else ""
     params = urlencode({
         "api_token": my_token,
         "search": text,
         "search_field": search_field,
-        "categories": categories,
+        "categories": categories_str,
+        "language": "en",
         "limit": number
     })
     connection.request("GET", f"/v1/news/all?{params}")
