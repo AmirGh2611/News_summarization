@@ -29,7 +29,7 @@ def ui(text, search_field, categories, number):
         title = i["title"]
         url = i["url"]
         description = i["description"]
-        summary = summarizer(description, max_length=56, min_length=25, do_sample=False)[0]["summary_text"]
+        summary = summarizer(description, max_length=40, min_length=10, do_sample=False)[0]["summary_text"]
         results.append({
             "Title": title,
             "Summary": summary,
